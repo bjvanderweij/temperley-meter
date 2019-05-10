@@ -11,7 +11,7 @@ def onsets(lines):
         if m is None:
             warn('Line not matched: %s' % line)
             continue
-        onsets.append(int(m.group(2)))
+        onsets.append(int(m.group(1)))
     return onsets
 
 def pips(onsets, pip=50):
@@ -21,5 +21,3 @@ def pips(onsets, pip=50):
     for onset in onsets:
         grid[(onset - shift) // pip] = True
     return grid
-
-
